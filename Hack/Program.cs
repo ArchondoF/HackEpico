@@ -58,6 +58,26 @@ namespace Hack
                 "   resultado.push(a[i].innerHTML);}" +
                 "return resultado;" +
                 "}");
+            var ImagenSrc = await pagina.EvaluateFunctionAsync("()=>{" +
+               "const a =  document.querySelectorAll('.ui-search-result-image__element');" +
+
+               "const resultado = [];" +
+
+               "for(let i = 0 ; i < a.length ; i++){" +
+               "const b =  document.querySelectorAll('.ui-search-result-image__element')[i].src;" +
+               "   resultado.push(b);}" +
+               "return resultado;" +
+               "}");
+            var Link = await pagina.EvaluateFunctionAsync("()=>{" +
+              "const a =  document.querySelectorAll('.ui-search-result--core');" +
+
+              "const resultado = [];" +
+
+              "for(let i = 0 ; i < a.length ; i++){" +
+              "const b =  document.querySelectorAll('.ui-search-result--core')[i].firstChild.firstChild.href;" +
+              "   resultado.push(b);}" +
+              "return resultado;" +
+              "}");
 
             List<Articulo> colArticulos = new List<Articulo>();
             for (int i = 0; i < Titulos.Count(); i++)
@@ -71,6 +91,7 @@ namespace Hack
                 }
                 
                 aux.setPrecio(Precios[i].ToString());
+                aux.setImagen(ImagenSrc[i].ToString());
                 colArticulos.Add(aux);
             }
             foreach (Articulo aux in colArticulos)

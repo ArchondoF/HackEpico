@@ -9,6 +9,8 @@ namespace Hack
         private string Titulo;
         private string Precio;
         private string Ubicacion = "No disponible";
+        private string Imagen;
+        private string Link;
 
         public Articulo()
         {
@@ -38,6 +40,22 @@ namespace Hack
         public void setPrecio(string _Precio)
         {
             this.Precio = _Precio;
+        }
+        public string getImagen()
+        {
+            return this.Imagen;
+        }
+        public void setImagen(string _Imagen)
+        {
+            this.Imagen = _Imagen;
+        }
+        public string getLink()
+        {
+            return this.Link;
+        }
+        public void setLink(string _Link)
+        {
+            this.Link = _Link;
         }
     }
 }
