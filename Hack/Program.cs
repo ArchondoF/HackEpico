@@ -92,6 +92,7 @@ namespace Hack
                 
                 aux.setPrecio(Precios[i].ToString());
                 aux.setImagen(ImagenSrc[i].ToString());
+                aux.setLink(Link[i].ToString());
                 colArticulos.Add(aux);
             }
             foreach (Articulo aux in colArticulos)
